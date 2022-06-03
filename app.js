@@ -33,9 +33,12 @@ const getSearchInput = () => {
 
 const fetchGif = async (searchTerm) => {
   try {
-    const gifResponse = await axios.get("http://api.giphy.com/v1/gifs/search", {
-      params: { api_key, q: searchTerm },
-    });
+    const gifResponse = await axios.get(
+      "https://api.giphy.com/v1/gifs/search",
+      {
+        params: { api_key, q: searchTerm },
+      }
+    );
     const statusCode = gifResponse.data.meta.status;
     const responseLength = gifResponse.data.data.length;
     // check if statuscode not ok
