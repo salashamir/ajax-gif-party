@@ -67,3 +67,11 @@ const createImg = (url, title) => {
 const appendToGrid = (imgEl) => {
   $(".gif-grid").append(imgEl);
 };
+
+const displayMessage = (msg) => {
+  const $uiAlert = $(`<p class="ui-alert">${msg}</p>`);
+  $("#search-gif-form").after($uiAlert);
+  setTimeout(() => {
+    $(".ui-alert").remove();
+  }, 5000);
+};
