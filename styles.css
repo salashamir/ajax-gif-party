@@ -1,0 +1,148 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap");
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background-color: rgb(20, 20, 20);
+  font-family: "Rubik", sans-serif;
+  font-size: 1.8rem;
+  color: #fff;
+  letter-spacing: 1.3px;
+}
+
+.primary-heading {
+  text-align: center;
+  font-size: 4.8rem;
+  font-weight: 500;
+  margin: 4.8rem 0;
+}
+
+.container {
+  width: 90%;
+  max-width: 900px;
+  margin-inline: auto;
+}
+
+#search-gif-form {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+#search-gif {
+  font-family: inherit;
+  color: rgb(0, 69, 172);
+  width: 100%;
+  padding: 1.2rem 0.9rem;
+  font-size: 2.2rem;
+  border-radius: 6px;
+  border: 2px solid rgb(135, 233, 255);
+  transition: all 0.3s ease;
+}
+
+#search-gif:focus {
+  outline: none;
+  border: 2px solid rgb(19, 85, 226);
+}
+
+#search-gif::placeholder {
+  font-family: inherit;
+  color: rgb(197, 197, 197);
+}
+
+.form-group {
+  /* border: 2px solid blue; */
+}
+
+.form-group {
+  flex: 2;
+}
+
+.btn {
+  font-family: inherit;
+  flex: 1;
+  padding: 1.2rem 0;
+  font-size: 2.2rem;
+  border-radius: 8px;
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+.search-btn {
+  background-color: rgb(40, 40, 40);
+  border: 2px solid #666;
+}
+
+.search-btn:hover {
+  background-color: #fff;
+  color: rgb(40, 40, 40);
+  border: 2px solid #666;
+  cursor: pointer;
+}
+
+.remove-btn {
+  background-color: rgb(195, 68, 68);
+  border: 2px solid rgb(255, 16, 100);
+}
+
+.remove-btn:hover {
+  color: rgb(255, 16, 100);
+  border: 2px solid rgb(255, 16, 100);
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.gif-grid {
+  margin: 3rem 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.gif-grid-img {
+  width: 100%;
+  display: block;
+}
+
+@media (max-width: 780px) {
+  html {
+    font-size: 58.25%;
+  }
+  .gif-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 550px) {
+  html {
+    font-size: 52.25%;
+  }
+  .form-group {
+    width: 100%;
+  }
+  .btn {
+    width: 75%;
+  }
+  #search-gif-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .gif-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
