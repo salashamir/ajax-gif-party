@@ -4,6 +4,9 @@ const api_key = "RbaiQGQU5QmXMMwIbTusJaDonGEYaZHd";
 $("#search-gif-form").on("submit", async (e) => {
   e.preventDefault();
 
+  // make sure ui message is not being show
+  $(".ui-alert").text("");
+  $(".ui-alert").addClass("none");
   // access the input search value
   const searchTerm = getSearchInput();
   // make get request to API and destructure url
@@ -13,7 +16,6 @@ $("#search-gif-form").on("submit", async (e) => {
     },
     title,
   } = await fetchGif(searchTerm);
-  console.log(url);
   // create image dom element
   const $imgEl = createImg(url, title);
   // append to DOM, specifically to the gif grid section
@@ -69,9 +71,7 @@ const appendToGrid = (imgEl) => {
 };
 
 const displayMessage = (msg) => {
-  const $uiAlert = $(`<p class="ui-alert">${msg}</p>`);
-  $("#search-gif-form").after($uiAlert);
-  setTimeout(() => {
-    $(".ui-alert").remove();
-  }, 5000);
+  const $uiAlert = $(".ui-alert");
+  $uiAlert.text(msg);
+  $uiAlert.removeClass("none");
 };

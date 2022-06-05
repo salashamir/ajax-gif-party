@@ -119,6 +119,10 @@ body {
   display: block;
 }
 
+.none {
+  display: none;
+}
+
 @media (max-width: 780px) {
   html {
     font-size: 58.25%;
